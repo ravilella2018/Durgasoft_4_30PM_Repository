@@ -6,7 +6,7 @@ public class SecondClass {
 		System.out.println("Hello !");
 		
 		System.out.println("HRU");
-		
+		 
 
 	}
 
