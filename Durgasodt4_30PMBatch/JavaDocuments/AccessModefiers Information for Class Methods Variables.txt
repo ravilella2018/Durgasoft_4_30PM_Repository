@@ -1,0 +1,50 @@
+
+AM : public, protected, <default> , private
+
+NAM : final, abstract, strictfp, static, native, synchronized, transiant,
+      volatile.
+
+
+AM NAM class ClassName
+{
+    AM NAM dataType variable = value;
+
+    AM NAM returnType methodName(Parameters)
+    {
+
+    }
+}
+
+
+Class Type:
+-----------
+1) Outer CLass
+2) Inner Class
+
+Class Level AM & NAM :
+----------------------
+OC/AM : public, <default>
+IC/AM : public, protected, <default> , private
+
+OC/NAM : final, abstract, strictfp
+IC/NAM : final, abstract, strictfp, static
+
+
+Method Level AM & NAM :
+-----------------------
+Method/AM   : public, protected, <default> , private
+Method/NAM  : final, abstract, strictfp, static, native, synchronized
+
+
+Variable Level AM & NAM :
+-------------------------
+Variable/AM  : public, protected, <default> , private
+Variable/NAM : final,static, transiant, volatile.
+
+
+
+
+
+
+
+
