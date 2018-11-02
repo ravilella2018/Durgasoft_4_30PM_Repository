@@ -42,6 +42,20 @@ Variable/AM  : public, protected, <default> , private
 Variable/NAM : final,static, transiant, volatile.
 
 
+staticMethod()
+{
+     Instance Family(variable & method) : Through Class Reference
+
+	 static Family(variable  & method) : either directly or with Class Name
+}
+
+
+instaceMethod()
+{
+	Instance Family(variable & method) : can call directly
+
+    static Family(variable  & method) : either directly or with Class Name
+}
 
 
 
