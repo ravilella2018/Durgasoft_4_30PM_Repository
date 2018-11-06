@@ -1,9 +1,17 @@
 package com.java.Inheritance;
 
-public class X 
+abstract class X 
 {
-	public void m1()
+	
+	public  int a=100;
+	public final  static  String cname="vmware";
+	
+	public abstract void m7();
+	
+	public  void m1()
 	{
+		a=10000;
+		
 		System.out.println("Iam m1 in Class X");
 	}
 
@@ -11,6 +19,7 @@ public class X
 	{
 		X obj=new X();
 		obj.m1();
+		System.out.println(obj.a);
 
 	}
 

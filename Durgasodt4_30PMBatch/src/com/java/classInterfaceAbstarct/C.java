@@ -14,6 +14,7 @@ public class C extends A
 	{
 		C c=new C();
 		c.m3();
+		c.m1();
 
 	}
 

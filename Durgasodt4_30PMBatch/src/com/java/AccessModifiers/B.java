@@ -12,6 +12,7 @@ public class B extends A
 	{
 		B b=new B();
 		b.m2();
+		b.m1();
 
 	}
 
