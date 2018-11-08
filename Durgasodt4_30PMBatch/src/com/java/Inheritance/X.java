@@ -1,12 +1,12 @@
 package com.java.Inheritance;
 
-abstract class X 
+public class X 
 {
 	
 	public  int a=100;
 	public final  static  String cname="vmware";
 	
-	public abstract void m7();
+	
 	
 	public  void m1()
 	{
