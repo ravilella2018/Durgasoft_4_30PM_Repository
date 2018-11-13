@@ -4,28 +4,55 @@ public class Employee
 {
 	int eno;
 	String ename;
+	float sal;
 	
 	public Employee()
 	{
 		System.out.println("iam default constructor....");
 	}
 
-	public Employee(int i, String string) 
+	public Employee(int eno) 
 	{
-		eno=i;
-		ename=string;
+		this();
+		
+		this.eno=eno;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
+	}
+	
+	public Employee(int eno, String ename) 
+	{
+		this(1743);
+		
+		this.eno=eno;
+		this.ename=ename;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
+	}
+
+	
+
+	public Employee(int eno, String ename, float sal) 
+	{
+		this(1744,"ravilella");
+		
+		this.eno=eno;
+		this.ename=ename;
+		this.sal=sal;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
 	}
 
 	public static void main(String[] args) 
-	{
-		Employee emp1=new Employee(1744,"ravilella"); 
-		System.out.println(emp1.eno);
-		System.out.println(emp1.ename);
+	{		
+		Employee emp3=new Employee(1745,"keerthan",1000.23f); 
 		
-		Employee emp2=new Employee(1745,"keerthan"); 
-		System.out.println(emp2.eno);
-		System.out.println(emp2.ename);
-
 	}
 
 }
