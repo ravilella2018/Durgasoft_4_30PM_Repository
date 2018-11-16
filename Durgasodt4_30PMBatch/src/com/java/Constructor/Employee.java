@@ -6,14 +6,14 @@ public class Employee
 	String ename;
 	float sal;
 	
-	public Employee()
+	/*public Employee()
 	{
 		System.out.println("iam default constructor....");
-	}
+	}*/
 
 	public Employee(int eno) 
 	{
-		this();
+		//this();
 		
 		this.eno=eno;
 		
@@ -48,11 +48,15 @@ public class Employee
 		System.out.println(this.ename);
 		System.out.println(this.sal);
 	}
+	
+	public static  void m2()
+	{
+		
+	}
 
 	public static void main(String[] args) 
 	{		
-		Employee emp3=new Employee(1745,"keerthan",1000.23f); 
-		
+		//Employee emp3=new Employee(1745,"keerthan",1000.23f); 
 	}
 
 }
