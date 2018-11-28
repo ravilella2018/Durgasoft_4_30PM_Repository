@@ -1,37 +1,38 @@
 package com.selenium.Launchers;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-
-public class BrowserLaunch 
+public class BrowserLaunch extends BasePage
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws Exception 
 	{
-		WebDriver driver;
+		//launch(loadData("firefoxbrowser"), loadData("amazonurl"));
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Browser_Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.get("https://www.amazon.in");
+		launch(loadData("chromebrowser"), loadData("amazonurl"));
 		
-
-		System.setProperty("webdriver.gecko.driver", "D:\\Browser_Drivers\\geckodriver.exe");
-		driver=new FirefoxDriver();
-		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
 		
+		String title = driver.getTitle();
+		System.out.println(title);
 		
-		System.setProperty("webdriver.ie.driver", "D:\\Browser_Drivers\\IEDriverServer.exe");
-		driver=new InternetExplorerDriver();
-		driver.get("http://www.snapdeal.com");
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
 		
+		driver.manage().deleteAllCookies();
 		
-		System.setProperty("webdriver.edge.driver", "D:\\Browser_Drivers\\MicrosoftWebDriver.exe");
-		driver=new EdgeDriver();
-		driver.get("https://www.facebook.com");
-				
+		driver.navigate().back();
+		
+		Thread.sleep(4000);
+		
+		driver.navigate().forward();
+		
+		Thread.sleep(4000);
+		
+		driver.navigate().refresh();
+		
+		//driver.close();
+		
+		driver.quit();
+		
 		
 	}
 
