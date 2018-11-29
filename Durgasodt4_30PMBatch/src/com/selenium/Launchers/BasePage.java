@@ -45,7 +45,8 @@ public class BasePage
 			
 		}
 		
-		driver.get(url);
-		
+		//driver.get(url);
+		driver.navigate().to(url);
+		driver.manage().window().maximize();
 	}
 }
