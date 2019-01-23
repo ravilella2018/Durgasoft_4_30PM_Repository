@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="13506" started-at="2019-01-22T11:43:42Z" finished-at="2019-01-22T11:43:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="13506" started-at="2019-01-22T11:43:42Z" finished-at="2019-01-22T11:43:56Z">
+      <class name="com.myproject.Durgasoft4_30PMBatch.TC_001">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.myproject.Durgasoft4_30PMBatch.TC_001@475530b9]" name="f" duration-ms="13476" started-at="2019-01-22T11:43:42Z" finished-at="2019-01-22T11:43:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- com.myproject.Durgasoft4_30PMBatch.TC_001 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
