@@ -1,9 +1,15 @@
 package com.myproject.Durgasoft4_30PMBatch;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.util.Date;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,12 +19,16 @@ import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 public class BasePage 
 {
+	private static final Logger log=Logger.getLogger(BasePage.class.getName());
 	public static WebDriver driver;
 	public static final String path="./data.properties";
+	public static final String log4jpath="./log4j.properties";
 	
 	
 	public static String loadData(String key) throws Exception
@@ -47,11 +57,7 @@ public class BasePage
 
 	public void type(String locatorKey, String value) throws Exception 
 	{
-		//driver.findElement(By.id(loadData(locatorKey))).sendKeys(loadData(value));
-		WebElement loc = getElement(locatorKey);
-		System.out.println(loc);
-		loc.sendKeys(loadData(value));
-		
+		getElement(locatorKey).sendKeys(loadData(value));		
 	}
 
 	public WebElement getElement(String locatorKey) throws Exception 
@@ -66,8 +72,24 @@ public class BasePage
 		else if(locatorKey.endsWith("_class"))
 			e=driver.findElement(By.className(loadData(locatorKey)));
 		else 
-			System.out.println("No locator is matched....");
+			reportFailure("No locator is matched...." + loadData(locatorKey));
 		return e;
+	}
+
+	public void reportFailure(String errorMsg) throws Exception 
+	{
+		takeScreenShot(errorMsg);
+		
+	}
+
+	public void takeScreenShot(String errorMsg) throws Exception 
+	{
+		Date dt=new Date();
+		String screenshotFileName = dt.toString().replace(":", "_").replace(" ", "_")+".png";
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(scrFile, new File(System.getProperty("user.dir")+"//failure//"+screenshotFileName));
+		log.info(errorMsg);
+		Reporter.log(errorMsg);
 	}
 
 	public void navigate(String urlKey) throws Exception 
@@ -100,7 +122,7 @@ public class BasePage
 		}
 		
 		driver.manage().window().maximize();
-		
+		PropertyConfigurator.configure(log4jpath);
 	}
 	
 
